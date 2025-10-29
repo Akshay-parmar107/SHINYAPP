@@ -1,0 +1,125 @@
+---
+title: "Pitch"
+output: ioslides_presentation
+date: "2025-10-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+title: "Iris Species Predictor"
+author: Akshay Ajit Parmar
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(ggplot2)
+library(randomForest)
+```
+
+## Slide 1: Title Slide
+
+# Iris Species Predictor
+### A Machine Learning Shiny App
+<br>
+**Your Name**
+<br>
+Data Science Specialization
+
+---
+
+## Slide 2: The Problem
+
+### Botanical Identification Challenge
+
+- Iris flowers come in multiple species
+- Manual identification requires expertise
+- Measurements can predict species accurately
+- **Solution**: Accessible web app for quick predictions
+
+```{r problem-plot, echo=FALSE, fig.height=4}
+data(iris)
+ggplot(iris, aes(x = Species, fill = Species)) + 
+  geom_bar() +
+  theme_minimal() +
+  labs(title = "Iris Species Distribution", y = "Count")
+```
+
+---
+
+## Slide 3: App Features
+
+### Interactive Machine Learning
+
+**Input Features:**
+- Sepal length and width
+- Petal length and width  
+- Real-time slider controls
+
+**Output:**
+- Species prediction with confidence
+- Probability breakdown
+- Visual data positioning
+
+```{r features-code, echo=TRUE, eval=FALSE}
+# Example of the prediction model
+model <- randomForest(Species ~ ., data = iris)
+predict(model, new_data)
+```
+
+---
+
+## Slide 4: Technical Implementation
+
+### Under the Hood
+
+**Technology Stack:**
+- R Shiny framework
+- Random Forest algorithm
+- ggplot2 for visualization
+- Deployed on Shinyapps.io
+
+**Code Structure:**
+```{r tech-structure, echo=TRUE, eval=FALSE}
+iris-shiny-app/
+├── ui.R          # User interface
+├── server.R      # Server logic  
+└── README.md     # Documentation
+```
+
+**Model Performance:**
+```{r model-performance, echo=FALSE}
+set.seed(123)
+train_idx <- sample(1:nrow(iris), 100)
+train_data <- iris[train_idx, ]
+test_data <- iris[-train_idx, ]
+model <- randomForest(Species ~ ., data = train_data)
+accuracy <- mean(predict(model, test_data) == test_data$Species)
+cat("Test Accuracy:", round(accuracy * 100, 1), "%")
+```
+
+---
+
+## Slide 5: Try It Yourself!
+
+### Live Demo & Code
+
+**Access the App:**
+🌐 https://akshay576.shinyapps.io/exploratory_p2/
+
+**Source Code:**
+💻 https://github.com/Akshay-parmar107/SHINYAPP/tree/main
+
+**Key Benefits:**
+- No botanical expertise required
+- Instant predictions
+- Educational visualization
+- Open source code
+
+<br>
+
+**Thank You! Questions?**
