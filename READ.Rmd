@@ -1,0 +1,59 @@
+---
+title: "READ"
+output: html_document
+date: "2025-10-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Iris Species Predictor - Shiny App
+
+A Shiny web application that predicts iris flower species based on morphological measurements using machine learning.
+
+## Features
+
+- Interactive sliders for flower measurements
+- Real-time species prediction using Random Forest
+- Visual representation on scatter plots
+- Probability confidence scores
+
+## Files
+
+- `ui.R` - User interface code
+- `server.R` - Server logic and machine learning model
+- `README.md` - This documentation file
+
+## How to Run Locally
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/iris-shiny-app.git
+   ```
+
+2. Open RStudio and set working directory to the project folder
+
+3. Install required packages:
+   ```r
+   install.packages(c("shiny", "randomForest", "ggplot2"))
+   ```
+
+4. Run the app:
+   ```r
+   shiny::runApp()
+   ```
+
+## Live Demo
+
+The app is deployed at: [Your Shinyapps.io URL here]
+
+## Model Details
+
+- **Algorithm**: Random Forest
+- **Training Data**: Iris dataset (n=150)
+- **Features**: Sepal length, sepal width, petal length, petal width
+- **Target**: Species (setosa, versicolor, virginica)
+
+## Author
+
+Akshay Ajit Parmar
