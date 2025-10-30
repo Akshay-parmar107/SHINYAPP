@@ -1,0 +1,50 @@
+---
+title: "Pitch in slidify"
+output: slidy_presentation
+date: "2025-10-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+title: "Iris Species Predictor"
+author: Akshay Ajit Parmar
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(ggplot2)
+library(randomForest)
+```
+
+## Slide 1: Title Slide
+
+# Iris Species Predictor
+### A Machine Learning Shiny App
+<br>
+**Your Name**
+<br>
+Data Science Specialization
+
+---
+
+## Slide 2: The Problem
+
+### Botanical Identification Challenge
+
+- Iris flowers come in multiple species
+- Manual identification requires expertise
+- Measurements can predict species accurately
+- **Solution**: Accessible web app for quick predictions
+
+```{r problem-plot, echo=FALSE, fig.height=4}
+data(iris)
+ggplot(iris, aes(x = Species, fill = Species)) + 
+  geom_bar() +
+  theme_minimal() +
+  labs(title = "Iris Species Distribution", y = "Count")
+```
