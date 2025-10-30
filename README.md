@@ -36,7 +36,7 @@ A Shiny web application that predicts iris flower species based on morphological
 
 ## Live Demo
 
-The app is deployed at: [Your Shinyapps.io URL here]
+The app is deployed at: https://akshay576.shinyapps.io/exploratory_p2/
 
 ## Model Details
 
